@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import { appContext } from "../context/appContext";
 
 const AppForm = () => {
-  const { listProducts, setListProducts } = useContext(appContext);
+  const { listProducts, setListProducts,category, setCategory, categories } = useContext(appContext);
   const [titleProduct, setTitleProduct] = useState("");
-  const [category, setCategory] = useState("");
+ 
   const [error, setError] = useState(null);
 
-  const categories = ["Lacteos", "Verduras", "Carne", "Otros"];
+
 
   const product = {
       title:
