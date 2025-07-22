@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { appContext } from "../context/appContext";
 
 const AppForm = () => {
-  const { list, setList } = useContext(appContext);
+  const { listProducts, setListProducts } = useContext(appContext);
   const [titleProduct, setTitleProduct] = useState("");
   const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ const AppForm = () => {
       return;
     }
 
-    setList([...list, product]);
+    setListProducts([...listProducts, product]);
     setTitleProduct("");
     setCategory("");
     setError(null);
@@ -42,7 +42,7 @@ const AppForm = () => {
     setCategory(value);
   };
 
-  console.log(list)
+  console.log(listProducts)
 
   return (
     <div>
