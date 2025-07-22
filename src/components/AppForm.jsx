@@ -1,0 +1,67 @@
+import { useContext, useState } from "react";
+import { appContext } from "../context/appContext";
+
+const AppForm = () => {
+  const { list, setList } = useContext(appContext);
+  const [titleProduct, setTitleProduct] = useState("");
+  const [category, setCategory] = useState("");
+  const [error, setError] = useState(null);
+
+  const categories = ["Lacteos", "Verduras", "Carne", "Otros"];
+
+  const product = {
+      title:
+        titleProduct.charAt(0).toUpperCase() +
+        titleProduct.slice(1).toLocaleLowerCase(),
+      id: crypto.randomUUID(),
+      category: category,
+      completed: false,
+    };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setTitleProduct(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (titleProduct.trim() === "" || category.trim() === "") {
+      setError("Por favor ingrese el nombre del producto y su categoria");
+      return;
+    }
+
+    setList([...list, product]);
+    setTitleProduct("");
+    setCategory("");
+    setError(null);
+  };
+
+  const handleCategoryChange = (e) => {
+    const value = e.target.value;
+    setCategory(value);
+  };
+
+  console.log(list)
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={titleProduct} onChange={handleChange} />
+        <select onChange={handleCategoryChange} value={category}>
+          <option value="">Selecciona una categoría</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+
+      {error ? <p>{error}</p> : ""}
+    </div>
+  );
+};
+
+export default AppForm;
