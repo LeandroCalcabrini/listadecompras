@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { appContext } from "../context/appContext";
 
+
 const AppForm = () => {
   const { listProducts, setListProducts,category, setCategory, categories } = useContext(appContext);
   const [titleProduct, setTitleProduct] = useState("");
@@ -44,18 +45,18 @@ const AppForm = () => {
 
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={titleProduct} onChange={handleChange} />
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="form">
+        <input type="text" value={titleProduct} onChange={handleChange} className="form-input"/>
         <select onChange={handleCategoryChange} value={category}>
-          <option value="">Selecciona una categoría</option>
+          <option value="">Categoria</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
             </option>
           ))}
         </select>
-        <button type="submit">Agregar</button>
+        <button type="submit" className="form-button">Agregar</button>
       </form>
 
       {error ? <p>{error}</p> : ""}

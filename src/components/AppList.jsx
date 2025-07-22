@@ -5,13 +5,12 @@ import StatusFilter from "./StatusFilter";
 
 const AppList = () => {
   return (
-    <main>
+    <article>
       <AppForm/>
       <Category/>
       <ItemList/>
       <StatusFilter/>
-
-    </main>
+    </article>
   );
 };
 

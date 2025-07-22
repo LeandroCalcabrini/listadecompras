@@ -26,8 +26,6 @@ const ListContext = ({ children }) => {
   const pendingProducts = listProducts.filter((prod) => !prod.completed);
   const collectedProducts = listProducts.filter((prod) => prod.completed);
 
-
-
   const filterProducts = () => {
     // FILTRAR PRODUCTO SEGUN CATEGORIA Y ESTADO  -- utilizado en  category
     if (filterCateg === "Carne") {
@@ -37,22 +35,24 @@ const ListContext = ({ children }) => {
       return listProducts.filter((prod) => prod.category === "Verduras");
     }
     if (filterCateg === "Otros") {
-      return listProducts.filter((prod) => prod.categoys === "Otros");
+      return listProducts.filter((prod) => prod.category === "Otros");
     }
     if (filterCateg === "Lacteos") {
       return listProducts.filter((prod) => prod.category === "Lacteos");
-    } 
-      if (filterCateg === "Pendientes") {
+    }
+    if (filterCateg === "Pendientes") {
       return pendingProducts;
-    } 
-      if (filterCateg === "Recogidos") {
+    }
+    if (filterCateg === "Recogidos") {
       return collectedProducts;
-    } 
-      
-    else return listProducts;
+    } else return listProducts;
   };
 
   const productsFilter = filterProducts();
+
+  const deleteAllProducts = () => {
+    setListProducts([]);
+  };
 
   return (
     <appContext.Provider
@@ -67,7 +67,8 @@ const ListContext = ({ children }) => {
         productsFilter,
         setFilterCateg,
         pendingProducts,
-        collectedProducts
+        collectedProducts,
+        deleteAllProducts,
       }}
     >
       {children}

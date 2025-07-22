@@ -9,7 +9,7 @@ const ItemList = () => {
       <ul>
         {productsFilter.map((item) => (
           <li key={item.id}>
-            <input type="checkbox" onChange={()=>completeProduct(item.id)} checked={item.completed}/> {item.title}
+            <input type="checkbox" onChange={()=>completeProduct(item.id)} checked={item.completed}/> <span>{item.title}</span>
             <button onClick={() => deleteProduct(item.id)}>Eliminar</button>
           </li>
         ))}
