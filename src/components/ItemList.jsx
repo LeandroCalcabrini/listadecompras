@@ -2,12 +2,12 @@ import  { useContext } from "react";
 import { appContext } from "../context/appContext";
 
 const ItemList = () => {
-  const { listProducts, deleteProduct, completeProduct } =
+  const { listProducts, deleteProduct, completeProduct, productsFilter} =
     useContext(appContext);
   return (
     <div>
       <ul>
-        {listProducts.map((item) => (
+        {productsFilter.map((item) => (
           <li key={item.id}>
             <input type="checkbox" onChange={()=>completeProduct(item.id)} checked={item.completed}/> {item.title}
             <button onClick={() => deleteProduct(item.id)}>Eliminar</button>

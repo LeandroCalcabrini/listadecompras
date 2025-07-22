@@ -1,8 +1,19 @@
+import { useContext, useState } from "react";
+import { appContext } from "../context/appContext";
 
 const Category = () => {
-  return (
-    <div>Category</div>
-  )
-}
+  const { categories, setFilterCateg } = useContext(appContext);
 
-export default Category
+  return (
+    <div>
+      <button onClick={() => setFilterCateg("Todos")}>Todos</button>
+      {categories.map((cat) => (
+        <button key={cat} onClick={() => setFilterCateg(cat)}>
+          {cat}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default Category;
