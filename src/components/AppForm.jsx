@@ -42,7 +42,6 @@ const AppForm = () => {
     setCategory(value);
   };
 
-  console.log(listProducts)
 
   return (
     <div>
