@@ -44,7 +44,6 @@ const AppForm = () => {
 
     setListProducts([...listProducts, product]); // seteamos el estado de la lista de los productos con el nuevo producto
     setTitleProduct(""); // actualizamoss el input nuevamente vacio
-    setCategory(""); // actualiamos la categoria a vacio
     setError(null); // actualizamos el error nuevamente a null
   };
 
