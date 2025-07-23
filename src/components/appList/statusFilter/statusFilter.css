@@ -78,17 +78,13 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-@media(max-width: 380px){
+@media(max-width: 780px){
 .btnsFilter{
   flex-direction: column;
+  gap: 0.5rem;
 }
 .btnFilter{
   width: 200px;
 }
 }
 
-@media(max-width:780px){
-  .btnsFilter{
-    gap: 0.5rem;
-  }
-}
