@@ -1,8 +1,11 @@
 import { appContext } from "./appContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ListContext = ({ children }) => {
-  const [listProducts, setListProducts] = useState([]); // Estado de la lista de los productos
+  const [listProducts, setListProducts] = useState(() => {
+    const getProductsLocalStorage = localStorage.getItem("products");
+    return getProductsLocalStorage ? JSON.parse(getProductsLocalStorage) : [];
+  }); // Estado de la lista de los productos
   const [category, setCategory] = useState(""); // estado que controla el tipo de la categoria que el producto corresponde
   const [filterCateg, setFilterCateg] = useState("Todos"); // estado para el filtrado tanto de las categorias de los productos como los estados de completados o pendientes
 
@@ -83,6 +86,10 @@ const ListContext = ({ children }) => {
     setFilterCateg("Todos");
     setCategory("");
   };
+
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(listProducts));
+  }, [listProducts]);
 
   return (
     <appContext.Provider
