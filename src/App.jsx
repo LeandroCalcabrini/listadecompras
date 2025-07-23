@@ -1,19 +1,15 @@
-import './App.css'
-import AppList from './components/AppList'
-import ListContext from './context/ListContext'
+import "./App.css";
+import AppList from "./components/appList/AppList";
+import ListContext from "./context/ListContext";
 
 function App() {
-
-
   return (
     <>
-    <ListContext>
-      <AppList/>
-    </ListContext>
-    
-     
+      <ListContext>
+        <AppList />
+      </ListContext>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

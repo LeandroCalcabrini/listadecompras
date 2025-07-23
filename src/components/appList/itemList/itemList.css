@@ -1,0 +1,81 @@
+.listContainer {
+  background: #fff;
+  min-height: 150px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.textNoProduct {
+  text-align: center;
+}
+
+.itemProduct {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+
+.itemProduct.active {
+  text-decoration: line-through;
+  color: #c1c1c1;
+}
+
+.itemProduct.Lacteos {
+  background-color: rgb(199, 233, 247);
+}
+
+.itemProduct.Verduras {
+  background-color: rgb(211, 248, 211);
+}
+
+.itemProduct.Carne {
+  background-color: rgb(252, 228, 228);
+}
+.itemProduct.Harinas {
+  background-color: rgb(255, 253, 230);
+}
+.itemProduct.Art-Limpieza {
+  background-color: rgb(255, 232, 203);
+}
+.itemProduct.Higiene {
+  background-color: rgb(250, 211, 255);
+}
+.itemProduct.Bebidas {
+  background-color: rgb(247, 238, 255);
+}
+.itemProduct.Fiambres {
+  background-color: rgb(248, 237, 221);
+}
+.itemProduct.Otros {
+  background-color: rgb(210, 210, 253);
+}
+.checkbox {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+.productTitle {
+  flex: 1;
+}
+
+.btnDeleteItem {
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 20px;
+  height: 20px;
+  color: red;
+  display: grid;
+  place-content: center;
+  transition: transform 0.3s ease;
+}
+
+.btnDeleteItem:hover {
+  transform: scale(1.05);
+}

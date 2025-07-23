@@ -1,0 +1,79 @@
+.statusContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btnsFilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 1rem;
+}
+
+.btnFilter {
+  width: 120px;
+  color: #ffffff;
+  background-color: #5c6bc0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btnFilter:hover {
+  background-color: #3f51b5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(92, 107, 192, 0.3);
+}
+
+.btnFilter:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btnFilter.active {
+  background-color: #3949ab;
+  box-shadow: inset 0 0 0 2px #f5f7fa, 0 0 10px rgba(57, 73, 171, 0.4);
+  transform: translateY(-1px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btnReset {
+  color: #ffffff;
+  background-color: rgb(243, 150, 150);
+  padding: 0.4rem 0.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btnReset:hover {
+  background-color: rgb(236, 101, 101);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(192, 92, 92, 0.3);
+}
+
+.btnReset:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btnReset.active {
+  background-color: #c71414;
+  box-shadow: inset 0 0 0 2px #fff, 0 0 10px rgba(170, 20, 20, 0.4);
+  transform: translateY(-1px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}

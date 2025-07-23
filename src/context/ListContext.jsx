@@ -6,7 +6,17 @@ const ListContext = ({ children }) => {
   const [category, setCategory] = useState(""); // estado que controla el tipo de la categoria que el producto corresponde
   const [filterCateg, setFilterCateg] = useState("Todos"); // estado para el filtrado tanto de las categorias de los productos como los estados de completados o pendientes
 
-  const categories = ["Lacteos", "Verduras", "Carne", "Otros"]; // array de las categorias
+  const categories = [
+    "Lacteos",
+    "Verduras",
+    "Carne",
+    "Harinas",
+    "Art-Limpieza",
+    "Higiene",
+    "Bebidas",
+    "Fiambres",
+    "Otros",
+  ]; // array de las categorias
 
   // FUNCIONES
   const deleteProduct = (id) => {
@@ -34,11 +44,29 @@ const ListContext = ({ children }) => {
     if (filterCateg === "Verduras") {
       return listProducts.filter((prod) => prod.category === "Verduras");
     }
-    if (filterCateg === "Otros") {
-      return listProducts.filter((prod) => prod.category === "Otros");
-    }
+
     if (filterCateg === "Lacteos") {
       return listProducts.filter((prod) => prod.category === "Lacteos");
+    }
+    if (filterCateg === "Art-Limpieza") {
+      return listProducts.filter((prod) => prod.category === "Art-Limpieza");
+    }
+
+    if (filterCateg === "Harinas") {
+      return listProducts.filter((prod) => prod.category === "Harinas");
+    }
+    if (filterCateg === "Fiambres") {
+      return listProducts.filter((prod) => prod.category === "Fiambres");
+    }
+    if (filterCateg === "Higiene") {
+      return listProducts.filter((prod) => prod.category === "Higiene");
+    }
+    if (filterCateg === "Bebidas") {
+      return listProducts.filter((prod) => prod.category === "Bebidas");
+    }
+
+    if (filterCateg === "Otros") {
+      return listProducts.filter((prod) => prod.category === "Otros");
     }
     if (filterCateg === "Pendientes") {
       return pendingProducts;
@@ -52,6 +80,8 @@ const ListContext = ({ children }) => {
 
   const deleteAllProducts = () => {
     setListProducts([]);
+    setFilterCateg("Todos");
+    setCategory("");
   };
 
   return (
@@ -65,6 +95,7 @@ const ListContext = ({ children }) => {
         category,
         setCategory,
         productsFilter,
+        filterCateg,
         setFilterCateg,
         pendingProducts,
         collectedProducts,
