@@ -86,3 +86,9 @@
   width: 200px;
 }
 }
+
+@media(max-width:780px){
+  .btnsFilter{
+    gap: 0.5rem;
+  }
+}
