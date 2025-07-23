@@ -11,7 +11,7 @@
 }
 
 .form-input {
-  max-width: 200px;
+  flex: 1;
   padding: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -43,4 +43,10 @@ select {
 }
 .buttonAdd:active {
   transform: scale(0.95);
+}
+
+@media(max-width:380px){
+  .form-input{
+    max-width: 150px;
+  }
 }
