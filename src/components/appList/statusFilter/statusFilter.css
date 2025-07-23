@@ -18,12 +18,12 @@
   width: 120px;
   color: #ffffff;
   background-color: #5c6bc0;
-  padding: 0.5rem;
+  padding: 0.8rem 0.5rem;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   transition: background-color 0.3s ease, transform 0.2s ease,
     box-shadow 0.2s ease;
 }
