@@ -51,7 +51,7 @@ const AppForm = () => {
     setListProducts([...listProducts, newProduct]); // seteamos el estado de la lista de los productos con el nuevo producto
     setTitleProduct(""); // actualizamoss el input nuevamente vacio
     setError(null); // actualizamos el error nuevamente a null
-    setFilterCateg(category);
+    setFilterCateg(category); // set del estado filterCateg con el nombre de la categoria del ultimo producto agregado
   };
 
   const handleCategoryChange = (e) => {

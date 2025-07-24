@@ -29,31 +29,61 @@
 .itemProduct.Lacteos {
   background-color: rgb(199, 233, 247);
 }
+.itemProduct.active.Lacteos {
+  background-color: rgba(199, 233, 247, 0.397);
+}
 
 .itemProduct.Verduras {
   background-color: rgb(211, 248, 211);
 }
+.itemProduct.active.Verduras {
+  background-color: rgba(211, 248, 211, 0.247);
+}
+
 
 .itemProduct.Carne {
   background-color: rgb(252, 228, 228);
 }
+.itemProduct.active.Carne {
+  background-color: rgba(252, 228, 228, 0.226);
+}
+
 .itemProduct.Harinas {
   background-color: rgb(255, 253, 230);
 }
+.itemProduct.active.Harinas {
+  background-color: rgba(255, 253, 230, 0.24);
+}
+
 .itemProduct.Art-Limpieza {
   background-color: rgb(255, 232, 203);
+}
+.itemProduct.active.Art-Limpieza {
+  background-color: rgba(255, 232, 203, 0.205);
 }
 .itemProduct.Higiene {
   background-color: rgb(250, 211, 255);
 }
+.itemProduct.active.Higiene {
+  background-color: rgba(250, 211, 255, 0.212);
+}
 .itemProduct.Bebidas {
   background-color: rgb(247, 238, 255);
+}
+.itemProduct.active.Bebidas {
+  background-color: rgba(247, 238, 255, 0.247);
 }
 .itemProduct.Fiambres {
   background-color: rgb(248, 237, 221);
 }
+.itemProduct.active.Fiambres {
+  background-color: rgba(248, 237, 221, 0.219);
+}
 .itemProduct.Otros {
   background-color: rgb(210, 210, 253);
+}
+.itemProduct.active.Otros {
+  background-color: rgba(210, 210, 253, 0.233);
 }
 .checkbox {
   cursor: pointer;
