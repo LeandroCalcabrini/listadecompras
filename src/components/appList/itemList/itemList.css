@@ -7,10 +7,10 @@
   border-radius: 5px;
 }
 
-.titleCategory{
+.titleCategory {
   margin-bottom: 0.7rem;
-    color: #053575;
-    font-size: 17px;
+  color: #053575;
+  font-size: 17px;
 }
 
 .textNoProduct {
@@ -27,8 +27,20 @@
   border-radius: 5px;
 }
 
+.price {
+  width: 80px;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .itemProduct.active {
-  text-decoration: line-through;
   color: #c1c1c1;
 }
 
@@ -45,7 +57,6 @@
 .itemProduct.active.Verduras {
   background-color: rgba(211, 248, 211, 0.247);
 }
-
 
 .itemProduct.Carne {
   background-color: rgb(252, 228, 228);
@@ -112,6 +123,28 @@
   transition: transform 0.3s ease;
 }
 
+.itemProduct.active .btnDeleteItem svg {
+  color: rgba(255, 0, 0, 0.192);
+}
 .btnDeleteItem:hover {
   transform: scale(1.05);
+}
+
+.totalPrice {
+  text-align: end;
+  margin-right: 80px;
+  padding-top: 0.7rem;
+  color: #053575;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.itemProduct.active .price {
+  background-color: #ffffff2c;
+  border: #ffffff2c;
+  color: #c1c1c1;
+}
+
+.itemProduct.active .productTitle {
+  color: #c1c1c1;
 }

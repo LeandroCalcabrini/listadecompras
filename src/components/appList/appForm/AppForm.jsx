@@ -45,6 +45,7 @@ const AppForm = () => {
       title: titleProduct,
       id: crypto.randomUUID(),
       category: category,
+      price: 0,
       completed: false,
     };
 
