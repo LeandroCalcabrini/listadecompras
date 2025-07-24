@@ -9,6 +9,7 @@ const StatusFilter = () => {
     listProducts,
     deleteAllProducts,
     filterCateg,
+    productsFilter
   } = useContext(appContext);
 
   return (
@@ -37,7 +38,7 @@ const StatusFilter = () => {
         </button>
       </div>
       <div className="btnDeleteAll">
-        <button className="btnReset" onClick={deleteAllProducts}>
+        <button className="btnReset" disabled={productsFilter.length == 0} onClick={deleteAllProducts}>
           Borrar todos
         </button>
       </div>

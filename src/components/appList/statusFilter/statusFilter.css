@@ -48,7 +48,7 @@
 
 .btnReset {
   color: #ffffff;
-  background-color: rgb(243, 150, 150);
+  background-color: rgb(245, 115, 115);
   padding: 0.4rem 0.5rem;
   border-radius: 5px;
   border: none;
@@ -59,12 +59,26 @@
   transition: background-color 0.3s ease, transform 0.2s ease,
     box-shadow 0.2s ease;
 }
-
 .btnReset:hover {
   background-color: rgb(236, 101, 101);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(192, 92, 92, 0.3);
 }
+
+.btnReset:disabled{
+  cursor: not-allowed;
+  background-color: rgb(243, 150, 150);
+  
+}
+
+.btnReset:disabled:hover{
+  background-color: rgb(243, 150, 150);
+  transform: none;
+  box-shadow: none;
+}
+
+
+
 
 .btnReset:active {
   transform: translateY(0);
