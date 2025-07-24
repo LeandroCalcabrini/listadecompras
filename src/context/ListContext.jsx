@@ -69,15 +69,15 @@ const ListContext = ({ children }) => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si, Borralo!",
+      confirmButtonText: "Si, Eliminalos!",
     }).then((result) => {
       if (result.isConfirmed) {
         setListProducts([]);
         setFilterCateg("Todos");
         setCategory("");
         Swal.fire({
-          title: "Borrado!",
-          text: "Los productos fueron borrados",
+          title: "Eliminados!",
+          text: "Los productos fueron eliminados",
           icon: "success",
         });
       }
