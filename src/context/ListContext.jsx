@@ -87,6 +87,8 @@ const ListContext = ({ children }) => {
     setCategory("");
   };
 
+  
+
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(listProducts));
   }, [listProducts]);

@@ -34,7 +34,7 @@ const AppForm = () => {
       return;
     }
 
-    const product = {
+    const newProduct = {
       // creacion del objeto que vamos a ingresar al estado de todos los productos
       title: titleProduct,
       id: crypto.randomUUID(),
@@ -42,7 +42,7 @@ const AppForm = () => {
       completed: false,
     };
 
-    setListProducts([...listProducts, product]); // seteamos el estado de la lista de los productos con el nuevo producto
+    setListProducts([...listProducts, newProduct]); // seteamos el estado de la lista de los productos con el nuevo producto
     setTitleProduct(""); // actualizamoss el input nuevamente vacio
     setError(null); // actualizamos el error nuevamente a null
   };
