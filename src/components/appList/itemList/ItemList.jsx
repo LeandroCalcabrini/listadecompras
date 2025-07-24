@@ -10,6 +10,7 @@ const ItemList = () => {
     productsFilter,
     listProducts,
     setListProducts,
+    filterCateg
   } = useContext(appContext);
 
   const handleChange = (e, id) => {
@@ -24,9 +25,11 @@ const ItemList = () => {
 
   return (
     <div className="listContainer">
+       <h2 className="titleCategory">{filterCateg}</h2>
       {productsFilter.length == 0 && (
         <p className="textNoProduct">Aun no hay productos cargados</p>
       )}
+     
       <ul>
         {productsFilter.map((item) => (
           <li

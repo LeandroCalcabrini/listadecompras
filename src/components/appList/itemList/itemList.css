@@ -7,6 +7,12 @@
   border-radius: 5px;
 }
 
+.titleCategory{
+  margin-bottom: 0.7rem;
+    color: #053575;
+    font-size: 17px;
+}
+
 .textNoProduct {
   text-align: center;
 }
