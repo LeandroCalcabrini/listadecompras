@@ -1,5 +1,6 @@
 import { appContext } from "./appContext";
 import { useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 
 const ListContext = ({ children }) => {
   const [listProducts, setListProducts] = useState(() => {
@@ -39,7 +40,8 @@ const ListContext = ({ children }) => {
   const pendingProducts = listProducts.filter((prod) => !prod.completed);
   const collectedProducts = listProducts.filter((prod) => prod.completed);
 
-  const filterProducts = () => { // funcion para mostrar la lista de los productos segun la categoria
+  const filterProducts = () => {
+    // funcion para mostrar la lista de los productos segun la categoria
 
     if (filterCateg === "Todos") {
       return listProducts;
@@ -54,15 +56,32 @@ const ListContext = ({ children }) => {
     if (filterCateg) {
       return listProducts.filter((prod) => prod.category === filterCateg);
     }
-    return listProducts
+    return listProducts;
   };
 
   const productsFilter = filterProducts();
 
-  const deleteAllProducts = () => { // Funcion para borrar todos los productos y a su vez resetear la categoria
-    setListProducts([]);
-    setFilterCateg("Todos");
-    setCategory("");
+  const deleteAllProducts = () => {
+    Swal.fire({
+      title: "Estas seguro/a",
+      text: "No vas a poder revertirlo",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Borralo!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setListProducts([]);
+        setFilterCateg("Todos");
+        setCategory("");
+        Swal.fire({
+          title: "Borrado!",
+          text: "Los productos fueron borrados",
+          icon: "success",
+        });
+      }
+    }); // Funcion para borrar todos los productos y a su vez resetear la categoria
   };
 
   useEffect(() => {
