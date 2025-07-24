@@ -3,7 +3,12 @@ import { appContext } from "../../../context/appContext";
 import "./category.css";
 
 const Category = () => {
-  const { categories, setFilterCateg, filterCateg } = useContext(appContext);
+  const { categories, setFilterCateg, filterCateg, setCategory } = useContext(appContext);
+
+  const handleClick = (cat) => {
+    setFilterCateg(cat);
+    setCategory(cat);
+  }
 
   return (
     <div className="categoryContainer">
@@ -17,7 +22,7 @@ const Category = () => {
         <button
           className={`categoryButton ${filterCateg === cat ? "active" : ""}`}
           key={cat}
-          onClick={() => setFilterCateg(cat)}
+          onClick={() => handleClick(cat)}
         >
           {cat}
         </button>
