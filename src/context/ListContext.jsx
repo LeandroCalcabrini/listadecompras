@@ -40,43 +40,21 @@ const ListContext = ({ children }) => {
   const collectedProducts = listProducts.filter((prod) => prod.completed);
 
   const filterProducts = () => {
-    // FILTRAR PRODUCTO SEGUN CATEGORIA Y ESTADO  -- utilizado en  category
-    if (filterCateg === "Carne") {
-      return listProducts.filter((prod) => prod.category === "Carne");
-    }
-    if (filterCateg === "Verduras") {
-      return listProducts.filter((prod) => prod.category === "Verduras");
+
+    if (filterCateg === "Todos") {
+      return listProducts;
     }
 
-    if (filterCateg === "Lacteos") {
-      return listProducts.filter((prod) => prod.category === "Lacteos");
-    }
-    if (filterCateg === "Art-Limpieza") {
-      return listProducts.filter((prod) => prod.category === "Art-Limpieza");
-    }
-
-    if (filterCateg === "Harinas") {
-      return listProducts.filter((prod) => prod.category === "Harinas");
-    }
-    if (filterCateg === "Fiambres") {
-      return listProducts.filter((prod) => prod.category === "Fiambres");
-    }
-    if (filterCateg === "Higiene") {
-      return listProducts.filter((prod) => prod.category === "Higiene");
-    }
-    if (filterCateg === "Bebidas") {
-      return listProducts.filter((prod) => prod.category === "Bebidas");
-    }
-
-    if (filterCateg === "Otros") {
-      return listProducts.filter((prod) => prod.category === "Otros");
-    }
     if (filterCateg === "Pendientes") {
       return pendingProducts;
     }
     if (filterCateg === "Recogidos") {
       return collectedProducts;
-    } else return listProducts;
+    }
+    if (filterCateg) {
+      return listProducts.filter((prod) => prod.category === filterCateg);
+    }
+    return listProducts
   };
 
   const productsFilter = filterProducts();
@@ -86,8 +64,6 @@ const ListContext = ({ children }) => {
     setFilterCateg("Todos");
     setCategory("");
   };
-
-  
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(listProducts));
