@@ -39,7 +39,7 @@ const ListContext = ({ children }) => {
   const pendingProducts = listProducts.filter((prod) => !prod.completed);
   const collectedProducts = listProducts.filter((prod) => prod.completed);
 
-  const filterProducts = () => {
+  const filterProducts = () => { // funcion para mostrar la lista de los productos segun la categoria
 
     if (filterCateg === "Todos") {
       return listProducts;
@@ -59,7 +59,7 @@ const ListContext = ({ children }) => {
 
   const productsFilter = filterProducts();
 
-  const deleteAllProducts = () => {
+  const deleteAllProducts = () => { // Funcion para borrar todos los productos y a su vez resetear la categoria
     setListProducts([]);
     setFilterCateg("Todos");
     setCategory("");

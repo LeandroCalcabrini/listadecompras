@@ -3,8 +3,14 @@ import { appContext } from "../../../context/appContext.js";
 import "./appForm.css";
 
 const AppForm = () => {
-  const { listProducts, setListProducts, category, setCategory, categories } =
-    useContext(appContext);
+  const {
+    listProducts,
+    setListProducts,
+    category,
+    setCategory,
+    categories,
+    setFilterCateg,
+  } = useContext(appContext);
   const [titleProduct, setTitleProduct] = useState("");
   const [error, setError] = useState(null);
 
@@ -45,6 +51,7 @@ const AppForm = () => {
     setListProducts([...listProducts, newProduct]); // seteamos el estado de la lista de los productos con el nuevo producto
     setTitleProduct(""); // actualizamoss el input nuevamente vacio
     setError(null); // actualizamos el error nuevamente a null
+    setFilterCateg(category);
   };
 
   const handleCategoryChange = (e) => {
